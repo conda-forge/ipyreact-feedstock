@@ -1,5 +1,5 @@
 {% set name = "ipyreact" %}
-{% set version = "0.4.1" %}
+{% set version = "0.4.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ipyreact-{{ version }}.tar.gz
-  sha256: 80560311eb4946a793d1108d21c893f697f45af71df52afe4a3cddfa0a9fadd4
+  sha256: a74b9f61176ca75c1c80ccfc46c35a7ad5591a30612d0e1e6fdbf91549fbf6a6
 
 build:
   noarch: python
