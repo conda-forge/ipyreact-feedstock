@@ -6,23 +6,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ipyreact-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ipyreact-{{ version }}.tar.gz
   sha256: a74b9f61176ca75c1c80ccfc46c35a7ad5591a30612d0e1e6fdbf91549fbf6a6
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - hatchling >=1.3.1
     - hatch-jupyter-builder >=0.3.2
     - jupyterlab ==3.*
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - ipywidgets >=7.0.0
     - anywidget >=0.2.0
 
@@ -33,6 +33,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/widgetti/ipyreact
